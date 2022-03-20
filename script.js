@@ -31,11 +31,34 @@ function play(playerSelection, computerSelection){
     }
 }
 
+function game(playerSelection){
+    let computerSelection = computerPlay();
+    let result = play(playerSelection, computerSelection);
+    console.log(playerSelection, computerSelection);
+    if(result == -1)
+        currentResult.textContent = "It's a tie!";
+    else if(result == 0){
+        currentResult.textContent = "You lose!";
+        computerScore++;
+    }
+    else{
+        currentResult.textContent = "You win!";
+        playerScore++;
+    }
+    if(playerScore == 5)
+        totalScore.textContent = `You win the game ${playerScore} to ${computerScore}`;
+    else if(computerScore == 5)
+        totalScore.textContent = `You lose the game ${playerScore} to ${computerScore}`;
+    else
+        totalScore.textContent = `Total score: ${playerScore} - ${computerScore}`;
+}
 
 const btns = document.querySelectorAll('button');
+const currentResult = document.querySelector('.current-round-result');
+const totalScore = document.querySelector('.total-score');
 
 btns.forEach(choice => {
-    choice.addEventListener('click', game(e))
+    choice.addEventListener('click', (e) => game(e.target.classList.value))
 });
 
 let playerScore = 0;
