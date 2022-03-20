@@ -46,9 +46,9 @@ function game(playerSelection){
         playerScore++;
     }
     if(playerScore == 5)
-        totalScore.textContent = `You win the game ${playerScore} to ${computerScore}`;
+        totalScore.textContent = `You win the game ${playerScore} - ${computerScore}`;
     else if(computerScore == 5)
-        totalScore.textContent = `You lose the game ${playerScore} to ${computerScore}`;
+        totalScore.textContent = `You lose the game ${playerScore} - ${computerScore}`;
     else
         totalScore.textContent = `Total score: ${playerScore} - ${computerScore}`;
 }

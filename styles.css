@@ -1,0 +1,29 @@
+body{
+    font-size: 48px;
+    background-image: url('./images/texture.svg');
+}
+.game{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    margin-top: 20vw;
+}
+.score{
+    text-align: center;
+}
+button{
+    width: 288px;
+    text-align: center;
+    border-radius: 10px;
+    font-size: 48px;
+    padding: 20px 50px 20px 50px;
+    border: solid hsl(213, 88%, 37%);
+    background-color: hsl(213, 88%, 37%);
+    color: white;
+}
+.player-selection{
+    display: flex;
+    gap: 50px;
+}
